@@ -59,7 +59,7 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <div className="">
       <Container id="images">
-        <Row>
+        <Row style={{ justifyContent: 'center' }}>
           {imgData.images.map((image: any, index: number) => {
             const { author, download_url } = image
             return (

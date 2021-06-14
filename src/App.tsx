@@ -1,18 +1,18 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import { HashRouter, Switch, Route, Link } from 'react-router-dom'
 import NavComponent from './NavComponent'
 import PrivateRoute from './auth/PrivateRoute'
 import AuthProvider from './auth/AuthProvider'
 import HomePage from './pages/HomePage'
 import PublicPage from './pages/PublicPage'
-import PrivatePage from './pages/PrivatePage'
 import LoginPage from './pages/LoginPage'
 import './App.scss'
 
 const App = (): React.ReactElement => {
   return (
     <AuthProvider>
-      <BrowserRouter>
+      {/** HashRouter needed for github pages */}
+      <HashRouter>
         <div>
           <NavComponent />
 
@@ -36,7 +36,7 @@ const App = (): React.ReactElement => {
             </PrivateRoute>
           </Switch>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   )
 }
